@@ -28,10 +28,10 @@
 ## Lekce
 
 Prozatím 6 lekcí
-[X] Info - NPM, Node, Webpack, ES6
-[X] React start
-[X] Todo List
-[X] Todo List Separate components
-[X] Bootstrap Todo List
-[X] Redux Todo List
-[X] Redux Todo List - Split
+- [X] Info - NPM, Node, Webpack, ES6
+- [X] React start
+- [X] Todo List
+- [X] Todo List Separate components
+- [X] Bootstrap Todo List
+- [X] Redux Todo List
+- [X] Redux Todo List - Split
