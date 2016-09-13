@@ -25,10 +25,13 @@
   - A jiné...
 
 ### Node.js
+
 >  Node.js je „evented I/O framework for V8“, což si můžeme volně představit jako engine V8, rozšířený o funkce, které umožňují prováděným skriptům přistupovat k souborům či síťovým funkcím. Což v praxi znamená, že můžeme vytvořit server, který „naslouchá“ na určeném portu téměř stejným způsobem, jakým vytváříme například obslužné metody pro události v prohlížeči.
 
 ### NPM ```package.json```
+
 package.json není nic jiného než skutečně JSON soubor s pár řádky informací co má NPM dělat.
+
 > Co jste čekali ? :blush: :| :grin:
 
 Jeho strukturu najdete např.: [http://browsenpm.org/package.json](http://browsenpm.org/package.json) v interaktivní formě
@@ -54,6 +57,7 @@ Náš hlavní spouštěcí script je a bude vždy ```dev``` pro spuštění webp
 #### Vlastní script
 
 Jednoduchý důvod proč si napsat vlastní script.
+
 > Možnost spustit ```npm install```(nebo ```npm update```) a ```npm run dev``` naráz např.: script start
 
 ```
@@ -63,6 +67,7 @@ Jednoduchý důvod proč si napsat vlastní script.
 ### Best practicies (NPM)
 
 #### Lenost
+
 > NPM Vám umožní být líní 
 
 NPM dovolí spouštět příkazy jako ```npm i```, ```npm un```, ```npm up```, ```npm v``` a dalsí...
@@ -80,6 +85,7 @@ a další...
 V NPM existuje možnost spustit script s názvem ```start``` příkazem ```npm start```
 
 ## Webpack
+
 > Webpack je tzv. module bundler neboli zabalovač - zabalíme s ním různé moduly js, css, obrázků a dalších podle našeho nastavení
 
 ### Proč používáme Webpack ?
@@ -88,11 +94,13 @@ Například pro použití ES6 syntaxe Javascriptu musíme použít nějaký pře
 Webpack tyto překladače umí používat jako loadery :blush: a proto se nám krásně hodí pro všechny.
 
 ### Loaders
+
 > Loadery slouží k načtení obsahu, zpracování a jeho následnému zabalení.
 
 Například sass-loader načte SCSS transformuje jej do CSS a pošle k zabalení.
 
 ### Webpack dev server
+
 > Webpack vývojový server slouží pro vývoj - zpřístupní například funkci "hot module replacemenet" či source-maps 
 
 ### Webpack config (Dev config)
@@ -152,6 +160,7 @@ module.exports = { // Export nastavení
 > Není nutné vždy znát každou řádku konfigurace, ale je nutné umět vyřešit nastalé problémy. :blush:
 
 ## Babel
+
 > Babel je překladač novější syntaxe js do starší.
 
 !!! V našem případě - Aby se dalo rozeznat soubory s novější a starší syntaxí používáme pro novější syntaxi koncovku ```jsx```. !!!
@@ -163,6 +172,7 @@ I facebook má draft specifikaci pro [jsx](https://facebook.github.io/jsx/)
 !!! Pozor JSX není ES6 - ale babel umí kombinovat tyto syntaxe !!!
 
 ### .babelrc
+
 > .babelrc je soubor umístěný v projektu, který definuje jaké syntaxe, transformace a pluginy budou použity pro překladač
 > (tento konfig může být také schován v package.json)
 
@@ -187,6 +197,7 @@ Náš config
 Díky tomuto configu máme možnost používat spoustu nových funkcí.
 
 ## ES6 (ECMAScript 6)
+
 > ES6 specifikace - final z června 2016 - Standard
 
 Novinky a vlastnosti nalezneme zde [es6-features.org](http://es6-features.org/)
@@ -195,12 +206,14 @@ Ale základ zde také popíšu
 
 ### Const a let
 #### Const
+
 > Konstanta
 
 * po přiřazení hodnoty do konstanty je trvalé a nelze již znovu nadefinovat
 * funguje per block kodu - pouze v dané sekci od ```{``` do ```}```
 * v budoucnu by měla být rychlejší než ```var```
 #### Let
+
 > Proměnná
 
 Let slouží jako deklarace blokové lokální proměnné a popřípadně i s její inicializací.
@@ -212,7 +225,9 @@ O letu se lze dočíst více zde na [MDM](https://developer.mozilla.org/en-US/do
 
 #### Best practicies (const, let)
 ##### Bloky
+
 > u const a let je nutno brát na pamět že nefungují mimo svůj blok kodu
+
 ```javascript
 const a = 2;
 let b = 3;
@@ -224,10 +239,15 @@ var c = 4;
 } // konec bloku kodu
 console.log(a,b,c);//// a = 2, b = 3, c = "c"
 ```
+
 > var není blokové ale globální = Zlé... proto se snažíme var vymítit
+
 ---
+
 ##### ```{}``` a ```[]``` v konstantě
+
 > objekt a pole pokud je v konstantě můžeme do pole či do objektu stále ukládat a přidávat či odebírat
+
 ```javascript
 const a = {}
 a.q = 5;
@@ -236,9 +256,11 @@ b[0] = 5;
 b.push(12);
 ```
 Všechny operace jsou v pořádku.
+
 > Konstanta odkazuje na referenci kde pole/objekt je uloženo. Neřeší jeho vnitřní hodnotu.
 
 ### ```...``` spread
+
 > Object / literal spread - rozpad objektu/pole
 
 Tuto funkci je nejlepší ukázat na examplu 
@@ -261,13 +283,17 @@ let obj3 = {
 // výsledek - objekt 3 přebírá vlastnosti obj1 a obj2
 console.log(obj3); // {a: 1, b: 2, c: 3, d: 4, e: 4, f: 5}
 ```
+
 > Nejlepší uplatnění najdeme v Redux storech jelikož ```...``` neodkazují na původní hodnoty ale na nové okopírované hodnoty
 
 ### ```() => {}``` a ```() => ()```
+
 > Jsou to zkráceně funkce
 
 #### ```() => {}```
+
 > funkce, která zpouští kod - lze vyvolat return aby vrátila hodnotu
+
 ```javascript
 const fukce1 = (param1) => { /// definice funkce do konstanty funkce1
     console.log("ahoj", param1);
@@ -277,8 +303,11 @@ const fukce1 = (param1) => { /// definice funkce do konstanty funkce1
 const vysledek = funkce1("Studenti"); // spuštění funkce vrátí do proměnné
 console.log(vysledek) /// je true
 ```
+
 #### ```() => ()```
+
 > funkce, která ihned vrátí výsledek (pozor nemusí mít ani závorky)
+
 ```javascript
 // definice funkce a její následné okamžité spuštění pomocí (2) výsledek se uloží do funkce2
 const fukce2 = (param1) => (param1 + 3)(2);  
