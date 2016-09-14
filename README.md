@@ -35,3 +35,4 @@ Prozatím 6 lekcí
 - [X] Bootstrap Todo List
 - [X] Redux Todo List
 - [X] Redux Todo List - Split
+- [ ] Redux Form Todo List

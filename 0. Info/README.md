@@ -210,7 +210,7 @@ Ale základ zde také popíšu
 > Konstanta
 
 * po přiřazení hodnoty do konstanty je trvalé a nelze již znovu nadefinovat
-* funguje per block kodu - pouze v dané sekci od ```{``` do ```}```
+* funguje per block kódu - pouze v dané sekci od ```{``` do ```}```
 * v budoucnu by měla být rychlejší než ```var```
 #### Let
 
@@ -218,7 +218,7 @@ Ale základ zde také popíšu
 
 Let slouží jako deklarace blokové lokální proměnné a popřípadně i s její inicializací.
 
-* funguje per block kodu - pouze v dané sekci od ```{``` do ```}```
+* funguje per block kódu - pouze v dané sekci od ```{``` do ```}```
 * lze znovu použít
 
 O letu se lze dočíst více zde na [MDM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) a to včetně vysvětlení blokového zaměření.
@@ -226,17 +226,17 @@ O letu se lze dočíst více zde na [MDM](https://developer.mozilla.org/en-US/do
 #### Best practicies (const, let)
 ##### Bloky
 
-> u const a let je nutno brát na pamět že nefungují mimo svůj blok kodu
+> u const a let je nutno brát na pamět že nefungují mimo svůj blok kódu
 
 ```javascript
 const a = 2;
 let b = 3;
 var c = 4; 
-{// Blok kodu
-    const a = "a"; /// nová konstanta a v tomto bloku kodu
-    let b = "b"; /// nová konstanta b v tomto bloku kodu
+{// Blok kódu
+    const a = "a"; /// nová konstanta a v tomto bloku kódu
+    let b = "b"; /// nová konstanta b v tomto bloku kódu
     var c = "c"; /// stejná jako c deklarované nahoře -- Var není blokové
-} // konec bloku kodu
+} // konec bloku kódu
 console.log(a,b,c);//// a = 2, b = 3, c = "c"
 ```
 
@@ -292,7 +292,7 @@ console.log(obj3); // {a: 1, b: 2, c: 3, d: 4, e: 4, f: 5}
 
 #### ```() => {}```
 
-> funkce, která zpouští kod - lze vyvolat return aby vrátila hodnotu
+> funkce, která zpouští kód - lze vyvolat return aby vrátila hodnotu
 
 ```javascript
 const fukce1 = (param1) => { /// definice funkce do konstanty funkce1
