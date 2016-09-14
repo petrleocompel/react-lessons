@@ -1,9 +1,17 @@
-# Lesson 7
+# Custom 8
     
-Vytvoření todo listu s ReduxForm
-* ReduxForm 
-    * Fieldy
-        * Normalizace
-        * Field komponenty
-    * Submit
-    * Validace
+Vytvoření vlastní Note Aplikace
+
+Lze použít vše co jsme již dělali
+
+- postraní panel s listem poznámek (titulkem)
+- center jako zobrazovací(editační) okno
+- formulář pro založení
+- (store)
+- zapnutelné uložení na vyžádání
+
+## Note 
+- titulek
+- obsah
+- datum vytvoření
+- datum poslení úpravy
