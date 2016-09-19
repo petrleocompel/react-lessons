@@ -37,3 +37,4 @@ Prozatím 6 lekcí
 - [X] Redux Todo List - Split
 - [X] Redux Form Todo List
 - [ ] Exercise - Custom Note App 
+- [ ] Server Todo List
