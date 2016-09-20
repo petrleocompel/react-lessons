@@ -14,7 +14,7 @@ export default class Fetch {
 
     static defaultProps = {
         credentials: __DEVTOOLS__ ? 'include' : 'same-origin',
-        mode: 'no-cors'
+        //mode: 'no-cors'
     };
 
     static get(url, customProps = Fetch.defaultProps, customHeaders = Fetch.defaultHeaders()) {

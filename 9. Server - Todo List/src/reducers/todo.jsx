@@ -1,7 +1,10 @@
+import indexById from '../utils/indexById';
+
 const actions = {
     ITEM_CREATE:"ITEM_CREATE",
     ITEM_DELETE:"ITEM_DELETE",
-    ITEM_TOGGLE:"ITEM_TOGGLE"
+    ITEM_TOGGLE:"ITEM_TOGGLE",
+    LIST_RECEIVE:"LIST_RECEIVE"
 };
 
 /**
@@ -25,29 +28,36 @@ export default function todoStore(state = initialState, action = {}) {
                 list:[
                     ...state.list,
                     {
-                        text: action.value,
-                        done: false
+                        ...action.object
                     }
                 ]
             };
+        case actions.LIST_RECEIVE:
+            return {
+                ...state,
+                list: action.list,
+            };
         case actions.ITEM_TOGGLE: {
             const {list} = state;
+            const index = indexById(list, action.id);
             return {
                 list:[
-                    ...list.slice(0, action.index),
+                    ...list.slice(0, index),
                     {
-                        ...list[action.index],
-                        done: !list[action.index].done
+                        ...list[index],
+                        done: !list[index].done
                     },
-                    ...list.slice(action.index+1)
+                    ...list.slice(index+1)
                 ]
             };
         }
         case actions.ITEM_DELETE:
+            const {list} = state;
+            const index = indexById(list, action.id);
             return {
                 list:[
-                    ...state.list.slice(0, action.index),
-                    ...state.list.slice(action.index+1),
+                    ...state.list.slice(0, index),
+                    ...state.list.slice(index+1),
                 ]
             };
         default:

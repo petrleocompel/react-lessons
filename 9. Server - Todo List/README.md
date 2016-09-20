@@ -1,17 +1,9 @@
-# Custom 8
+# Server TODO List
     
-Vytvoření vlastní Note Aplikace
+Vytvoření TODO listu se server API
 
-Lze použít vše co jsme již dělali
-
-- postraní panel s listem poznámek (titulkem)
-- center jako editační okno
-- formulář pro založení
-- (store)
-- zaptnutelné uložení na vyžádání
-
-## Note 
-- titulek
-- obsah
-- datum vytvoření
-- datum poslení úpravy
+- použití Fetch
+- reálná komunikace se serverem
+- uložení dat
+- refresh dat
+- projevení do store a component

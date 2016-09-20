@@ -30,20 +30,15 @@ class AddForm extends React.Component  {
     };
 
     customSubmit = (data) => {
-        console.log('b');
-        console.log('aa ', JsonFetch.post('http://react./api/todo/create', data));
-        return JsonFetch.post('http://react./api/todo/create', data).then((response) => {
-            console.log(response);
-            if(respone.ok) {
+        return JsonFetch.post(window.BASE_URL + '/api/todo/create', data).then((response) => {
+            if(response.ok) {
                 return response.json();
             }
-
         }).then((serverData) => {
-            console.log(serverData);
-            this.props.onSubmit(serverData);
+            this.props.onSubmit(serverData.object);
             this.props.reset();
         }).catch(e => {
-            console.log(e)
+            console.error(e);
             throw new SubmissionError({_error: 'Nastala chyba při zpracování.'});
         });
     };
