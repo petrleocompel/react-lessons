@@ -28,7 +28,7 @@
 ## Lekce
 
 Prozatím 6 lekcí
-- [X] Info - NPM, Node, Webpack, ES6
+- [X] Info - NPM, Node, Webpack, ES6, GIT
 - [X] React start
 - [X] Todo List
 - [X] Todo List Separate components
@@ -37,4 +37,4 @@ Prozatím 6 lekcí
 - [X] Redux Todo List - Split
 - [X] Redux Form Todo List
 - [ ] Exercise - Custom Note App 
-- [ ] Server Todo List
+- [X] Server Todo List

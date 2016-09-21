@@ -11,7 +11,8 @@ const actions = {
     ITEM_CREATE:"ITEM_CREATE",
     ITEM_DELETE:"ITEM_DELETE",
     ITEM_TOGGLE:"ITEM_TOGGLE",
-    LIST_RECEIVE:"LIST_RECEIVE"
+    LIST_RECEIVE:"LIST_RECEIVE",
+    LIST_RECEIVE_REFRESH:"LIST_RECEIVE_REFRESH"
 };
 
 /**
@@ -22,19 +23,62 @@ const actions = {
  */
 const TodoList = class TodoList extends React.Component {
 
+    interval = null;
+
+    state = {
+        isFetched: false,
+        last_update: null
+    };
+
     /**
      * Při "mountu" componenty načteme list aktuálních položek
      */
     componentDidMount = () => {
+        this.fetchData();
+        this.interval = setInterval(this.handleRefresh, 5000);
+    };
+
+    fetchData = () => {
         JsonFetch.post(window.BASE_URL + '/api/todo/list', {}).then((response) => {
             if(response.ok) {
                 return response.json();
             }
         }).then((data) => {
-            const {list} = data;
-            this.props.dispatch({type: actions.LIST_RECEIVE, list})
+            const {list, last_update} = data;
+            this.props.dispatch({type: actions.LIST_RECEIVE, list});
+            this.setState({isFetched: true, last_update});
         }).catch(e => {
+            console.log(e);
+            clearInterval(this.interval);
             alert("Nastala chyba při načtení listu.");
+        });
+    };
+
+    compoentWillUnmount = () => {
+        if (this.interval !== null) {
+            clearInterval(this.interval);
+        }
+    };
+
+    handleRefresh = () => {
+        const {last_update} = this.state;
+        JsonFetch.post(window.BASE_URL + '/api/todo/refresh', {last_update}).then((response) => {
+            if(response.ok) {
+                return response.json();
+            }
+        }).then((data) => {
+            const {newItems, last_update} = data;
+            /*const {newItems, last_update} = data;
+            this.props.dispatch({type: actions.LIST_RECEIVE_REFRESH, newItems});
+            this.setState({isFetched: true, last_update});*/
+            if (newItems.length) {
+                this.fetchData();
+            }
+            this.setState({last_update});
+        }).catch(e => {
+            console.log(e);
+            alert("Nastala chyba při načtení listu.");
+            clearInterval(this.interval);
         });
     };
 
@@ -63,6 +107,7 @@ const TodoList = class TodoList extends React.Component {
         }).then(() => {
             this.props.dispatch({type: actions.ITEM_DELETE, id})
         }).catch(e => {
+            console.log(e);
             alert("Nastala chyba při smazání.");
         });
     };
@@ -91,11 +136,14 @@ const TodoList = class TodoList extends React.Component {
 
     render = () => {
         const {list} = this.props;
+        if (!this.state.isFetched) {
+            return <div>Loading ...</div>
+        }
         return <div>
             <ListGroup>
                 {list.map((item,index) => <Item
                     key={item.id}
-                    done={item.done}
+                    done={parseInt(item.done) === 1}
                     text={item.text}
                     onToggleState={this.handleToggleState.bind(this, item.id)}
                     onDelete={this.handleDelete.bind(this, item.id)} />)}

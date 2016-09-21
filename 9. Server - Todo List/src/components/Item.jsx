@@ -13,7 +13,7 @@ export default class Item extends React.Component {
         const {text, done, onToggleState, onDelete} = this.props;
 
         return <ListGroupItem>
-            <Checkbox checked={done} onClick={onToggleState}>
+            <Checkbox checked={done} onChange={onToggleState}>
                 {text} <Button bsStyle="danger" onClick={onDelete}><Glyphicon glyph="trash" /> Delete</Button>
             </Checkbox>
         </ListGroupItem>
