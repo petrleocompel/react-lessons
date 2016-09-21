@@ -17,17 +17,14 @@ const actions = {
 /**
  * Komponenta TodoList
  *
- * Obsahuje list a renderuje podkomponenty
- * ---
- *
- * Místo this.state.list používáme this.props.list
- *
- * --
- *
- * Pro propojení se storem musíme uložit do konstanty a poté exportovat se spuštěnou funkcí connect
+ * - dotazuje se na server pro data a posílá změny
+ * - container
  */
 const TodoList = class TodoList extends React.Component {
 
+    /**
+     * Při "mountu" componenty načteme list aktuálních položek
+     */
     componentDidMount = () => {
         JsonFetch.post(window.BASE_URL + '/api/todo/list', {}).then((response) => {
             if(response.ok) {
@@ -41,10 +38,23 @@ const TodoList = class TodoList extends React.Component {
         });
     };
 
+    /**
+     * Po odeslání AddForm se tato metoda spustí, odešleme do uložení do store
+     * @param object
+     */
     handleCreate = (object) => {
         this.props.dispatch({type: actions.ITEM_CREATE, object})
     };
 
+    /**
+     * Metoda pro smazání položky
+     *
+     * - odešle požadavek ke smazání na server
+     * - po provedení smaže položku ze store
+     *
+     * @param id
+     * @returns {*}
+     */
     handleDelete = (id) => {
         return JsonFetch.post(window.BASE_URL + '/api/todo/delete', {id}).then((response) => {
             if(response.ok) {
@@ -57,6 +67,15 @@ const TodoList = class TodoList extends React.Component {
         });
     };
 
+    /**
+     * Změní stav položky
+     *
+     * - pošle požadavek na server ke změně položky
+     * - po provedení na serveru aktualizuje náš seznam ve store
+     *
+     * @param id
+     * @returns {*}
+     */
     handleToggleState = (id) => {
         return JsonFetch.post(window.BASE_URL + '/api/todo/toggle-state', {id}).then((response) => {
             if(response.ok) {

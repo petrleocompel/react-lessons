@@ -29,6 +29,17 @@ class AddForm extends React.Component  {
         return errors;
     };
 
+    /**
+     * Submit metoda
+     *
+     * - odešle data na server
+     * - odpověď převede na json
+     * - z odpověď předá metodě onSubmit z props
+     * - resetne formulář
+     *
+     * @param data
+     * @returns {*}
+     */
     customSubmit = (data) => {
         return JsonFetch.post(window.BASE_URL + '/api/todo/create', data).then((response) => {
             if(response.ok) {
