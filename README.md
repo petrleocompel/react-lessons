@@ -9,14 +9,14 @@
     * Redux
     * Bootstrap
     * Redux-Form
-* Sass
+* Flow
 * JSX
 * A další ...
 
 
 ## Co používáme?
 * NPM
-* PhpStorm
+* PhpStorm | [Nuclide](https://nuclide.io)
 * Terminál :blush:
 
 ## Pár odkazů
