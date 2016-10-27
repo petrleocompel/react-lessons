@@ -38,3 +38,4 @@ Prozatím 6 lekcí
 - [X] Redux Form Todo List
 - [ ] Exercise - Custom Note App 
 - [X] Server Todo List
+- [X] Flow

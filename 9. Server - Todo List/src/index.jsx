@@ -1,5 +1,5 @@
 /**
- * Opět různé konfigurace - root komponenta a devtools atd...
+ * Opět různé konfigurace - root komponenta, devtools atd...
  */
 import React from 'react';
 import {render} from 'react-dom';
