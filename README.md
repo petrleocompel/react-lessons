@@ -27,15 +27,17 @@
 
 ## Lekce
 
-Prozatím 6 lekcí
-- [X] Info - NPM, Node, Webpack, ES6, GIT
-- [X] React start
-- [X] Todo List
-- [X] Todo List Separate components
-- [X] Bootstrap Todo List
-- [X] Redux Todo List
-- [X] Redux Todo List - Split
-- [X] Redux Form Todo List
-- [ ] Exercise - Custom Note App 
-- [X] Server Todo List
-- [X] Flow
+
+- [X] 0.Info - NPM, Node, Webpack, ES6, GIT
+- [X] 1.React start
+- [X] 2.Todo List
+- [X] 3.Todo List Separate components
+- [X] 4.Bootstrap Todo List
+- [X] 5.Redux Todo List
+- [X] 6.Redux Todo List - Split
+- [X] 7.Redux Form Todo List
+- [X] 8.Exercise - Custom Note App 
+- [X] 9.Server Todo List
+- [X] 10.Flow
+- [X] 11.Test
+- [X] 12.TodoServer

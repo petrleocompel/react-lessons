@@ -1,9 +1,3 @@
-# Server TODO List
-    
-Vytvoření TODO listu se server API
+# Test
 
-- použití Fetch
-- reálná komunikace se serverem
-- uložení dat
-- refresh dat
-- projevení do store a component
+Otestování Vašich znalostí

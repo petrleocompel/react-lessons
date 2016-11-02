@@ -3,16 +3,6 @@
  */
 import React from 'react';
 import {render} from 'react-dom';
-import TodoList from './components/TodoList'
+import Test from './components/Test'
 
-
-
-class Root extends React.Component {
-
-    render() {
-        return <TodoList/>
-    }
-}
-
-
-render(<Root />, document.getElementById("root"));
+render(<Test/>, document.getElementById("root"));

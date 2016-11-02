@@ -14,13 +14,6 @@
     "babel-preset-stage-0": "^6.5.0",
     "html-webpack-plugin": "^2.22.0",
     "lodash": "^4.14.1",
-    "redux-devtools": "^3.3.1",
-    "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-filter-actions": "^1.2.0",
-    "redux-devtools-filterable-log-monitor": "^0.6.6",
-    "redux-devtools-instrument": "^1.1.2",
-    "redux-devtools-log-monitor": "^1.0.11",
-    "redux-immutable-state-invariant": "^1.2.3",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
@@ -31,12 +24,5 @@
     "react": "^15.3.0",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^15.3.0",
-    "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
-    "redux-form": "^6.0.2",
-    "redux-logger": "^2.6.1",
-    "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0",
-    "redux-undo": "^1.0.0-beta4"
   }
 }

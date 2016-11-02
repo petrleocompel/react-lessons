@@ -12,7 +12,7 @@ const writeRes = [
   "() => () => {}",
 ];
 
-class TodoList extends React.Component {
+class Test extends React.Component {
 
     state = {
         write: [],
