@@ -16,8 +16,8 @@
 
 ## Co používáme?
 * NPM
-* PhpStorm | [Nuclide](https://nuclide.io)
-* Terminál :blush:
+* WebStorm / PhpStorm / IDEA | [Nuclide](https://nuclide.io)
+* Terminál :blush: (OSX/Linux) | Správně nastavené CMD (Win)
 
 ## Pár odkazů
 * [React](https://facebook.github.io/react/)
@@ -26,7 +26,6 @@
 * [react-bootstrap](https://react-bootstrap.github.io)
 
 ## Lekce
-
 
 - [X] 0.Info - NPM, Node, Webpack, ES6, GIT
 - [X] 1.React start
