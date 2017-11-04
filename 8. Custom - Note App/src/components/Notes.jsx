@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {Row, Col, Nav, NavItem} from 'react-bootstrap';
+import {Row, Col, Nav, NavItem} from 'reactstrap';
 
 import AddForm from './AddForm'
 import Note from './Note'
@@ -36,7 +36,7 @@ class Notes extends React.Component {
         const note = list[actualIndex];
         return <Row>
             <Col xs={4}>
-                <Nav bsStyle="pills" stacked activeKey={actualIndex} onSelect={this.handleSelect}>
+                <Nav pills stacked activeKey={actualIndex} onSelect={this.handleSelect}>
                     {list.map((item,index) => <NavItem key={index} eventKey={index}>{item.title}</NavItem>)}
                 </Nav>
             </Col>

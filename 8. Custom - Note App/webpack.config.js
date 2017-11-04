@@ -19,8 +19,7 @@ module.exports = {
     },
     historyApiFallback: true,
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        // new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             __DEVTOOLS__: true,

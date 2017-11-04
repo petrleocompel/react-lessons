@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroupItem, Button, Checkbox, Glyphicon} from 'react-bootstrap';
+import {ListGroupItem, Button, Input} from 'reactstrap';
 
 export default class Item extends React.Component {
     static propTypes = {
@@ -13,9 +13,7 @@ export default class Item extends React.Component {
         const {text, done, onToggleState, onDelete} = this.props;
 
         return <ListGroupItem>
-            <Checkbox checked={done} onChange={onToggleState}>
-                {text} <Button bsStyle="danger" onClick={onDelete}><Glyphicon glyph="trash" /> Delete</Button>
-            </Checkbox>
+            <Input type="checkbox" checked={done} onClick={onToggleState} /> {text} <Button color="danger" onClick={onDelete}>Delete</Button>
         </ListGroupItem>
     }
 }

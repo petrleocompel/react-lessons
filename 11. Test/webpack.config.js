@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
@@ -20,17 +19,12 @@ module.exports = {
     },
     historyApiFallback: true,
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        // new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             __DEVTOOLS__: true,
             __SHOW_DEVTOOLS__: false
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './index.html'
-        }),
+        })
     ],
     resolve: {
         extensions: ['', '.js', '.jsx']

@@ -46,7 +46,7 @@ import {createStore, applyMiddleware, compose} from 'redux'
 // middleware
 import thunkMiddleware from 'redux-thunk'
 import promiseMiddleware from 'redux-promise'
-import createLogger from 'redux-logger'
+import {createLogger} from 'redux-logger'
 
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant'
 

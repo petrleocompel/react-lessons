@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {ListGroup} from 'react-bootstrap';
+import {ListGroup} from 'reactstrap';
 
 import Item from './Item'
 import AddForm from './AddForm'

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
+import {Button, FormGroup, Label, Input, FormText, FormFeedback} from 'reactstrap';
 
 /**
  * Komponenta BootstrapField
@@ -18,13 +18,13 @@ export default class BootstrapField extends React.Component  {
     render = () => {
         const {input, label, meta: {touched, error }, ...otherProps} = this.props;
         return <FormGroup validationState={this.getValidationState(touched, error, input.value)}>
-            <ControlLabel>{label}</ControlLabel>
-            <FormControl
+            <Label>{label}</Label>
+            <Input
                 {...input}
                 {...otherProps}
             />
-            <FormControl.Feedback />
-            {error && <HelpBlock>{error}</HelpBlock>}
+            <FormFeedback />
+            {error && <FormText>{error}</FormText>}
         </FormGroup>
     }
 }

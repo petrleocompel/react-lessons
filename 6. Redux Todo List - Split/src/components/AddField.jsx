@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
+import {Button, FormGroup, Label, Input, FormText} from 'reactstrap';
 
 
 
@@ -46,8 +46,8 @@ export default class AddField extends React.Component {
                 controlId="field-pridani"
                 validationState={this.getValidationState()}
             >
-                <ControlLabel>Text</ControlLabel>
-                <FormControl
+                <Label>Text</Label>
+                <Input
                     type="text"
                     value={value}
                     placeholder="Vložte text"
@@ -55,10 +55,10 @@ export default class AddField extends React.Component {
                     onChange={this.handleChange}
                     onKeyUp={this.handleKeyUp}
                 />
-                <FormControl.Feedback />
-                <HelpBlock>Vyplňte políčko pro přidání.</HelpBlock>
+                <FormFeedback />
+                <FormText>Vyplňte políčko pro přidání.</FormText>
             </FormGroup>
-            <Button bsSize="small" bsStyle="success" onClick={this.handleCreate}>Vytvoř</Button>
+            <Button size="sm" color="success" onClick={this.handleCreate}>Vytvoř</Button>
         </div>
     }
 }

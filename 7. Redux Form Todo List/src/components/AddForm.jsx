@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import {Button} from 'reactstrap';
 import {Field, reduxForm} from 'redux-form';
 import BootstrapField from "./BootstrapField";
 
@@ -44,7 +44,7 @@ class AddForm extends React.Component  {
         const {handleSubmit, pristine, submitting} = this.props;
         return <form onSubmit={handleSubmit(this.customSubmit)}>
             <Field component={BootstrapField} name="text" label="Text" type="text" normalize={this.noDoubleSpace} />
-            <Button type="submit" bsSize="small" bsStyle="success" disabled={pristine || submitting}>Vytvoř</Button>
+            <Button type="submit" size="sm" color="success" disabled={pristine || submitting}>Vytvoř</Button>
         </form>
     }
 }

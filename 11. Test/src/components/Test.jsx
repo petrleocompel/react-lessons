@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, ListGroup} from 'react-bootstrap';
+import {Button, ListGroup} from 'reactstrap';
 import BootstrapField from './BootstrapField'
 
 
@@ -60,8 +60,8 @@ class Test extends React.Component {
                     <BootstrapField onChange={(e) => this.setValue(e, index, 'write')} meta={{touched: validate, error}} input={{value:write[index]}} />
                 </div>
             })}
-            <Button bsStyle="warning" onClick={this.validate}>Check</Button>
-            <Button bsStyle="danger" onClick={() => {this.validate(true)}}>Show result</Button>
+            <Button color="warning" onClick={this.validate}>Check</Button>
+            <Button color="danger" onClick={() => {this.validate(true)}}>Show result</Button>
         </div>
     };
 }

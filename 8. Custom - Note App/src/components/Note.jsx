@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroupItem, Panel, Button, Checkbox, Glyphicon} from 'react-bootstrap';
+import {ListGroupItem, Panel, Button, Checkbox} from 'reactstrap';
 
 export default class Note extends React.Component {
     static propTypes = {
@@ -13,8 +13,8 @@ export default class Note extends React.Component {
         const {text, title, onClose, onDelete} = this.props;
 
         return <Panel>
-            <Button bsStyle="warning" onClick={onClose}><Glyphicon glyph="close" /> zavřít</Button>
-            <Button bsStyle="danger" onClick={onDelete}><Glyphicon glyph="trash" /> Smazat</Button>
+            <Button color="warning" onClick={onClose}>Zavřít</Button>
+            <Button color="danger" onClick={onDelete}>Smazat</Button>
             <h1>{title}</h1>
             <p>{text}</p>
         </Panel>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {ListGroup, ListGroupItem, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Glyphicon} from 'react-bootstrap';
+import {ListGroup, ListGroupItem, Button, FormGroup, Label, Input, FormFeedback, FormText} from 'reactstrap';
 
 /**
  * Komponenta Item
@@ -25,9 +25,7 @@ class Item extends React.Component {
         const {text, done, onToggleState, onDelete} = this.props;
 
         return <ListGroupItem>
-            <Checkbox checked={done} onClick={onToggleState}>
-                {text} <Button bsStyle="danger" onClick={onDelete}><Glyphicon glyph="trash" /> Delete</Button>
-            </Checkbox>
+            <Input type="checkbox" checked={done} onClick={onToggleState} /> {text} <Button color="danger" onClick={onDelete}>Delete</Button>
         </ListGroupItem>
     }
 
@@ -76,8 +74,8 @@ class AddField extends React.Component {
                 controlId="field-pridani"
                 validationState={this.getValidationState()}
             >
-                <ControlLabel>Text</ControlLabel>
-                <FormControl
+                <Label>Text</Label>
+                <Input
                     type="text"
                     value={value}
                     placeholder="Vložte text"
@@ -85,10 +83,10 @@ class AddField extends React.Component {
                     onChange={this.handleChange}
                     onKeyUp={this.handleKeyUp}
                 />
-                <FormControl.Feedback />
-                <HelpBlock>Vyplňte políčko pro přidání.</HelpBlock>
+                <FormFeedback />
+                <FormText>Vyplňte políčko pro přidání.</FormText>
             </FormGroup>
-            <Button bsSize="small" bsStyle="success" onClick={this.handleCreate}>Vytvoř</Button>
+            <Button size="sm" color="success" onClick={this.handleCreate}>Vytvoř</Button>
         </div>
     }
 }

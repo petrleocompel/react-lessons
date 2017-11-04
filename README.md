@@ -23,7 +23,7 @@
 * [React](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org)
 * [react-redux](http://redux.js.org)
-* [react-bootstrap](https://react-bootstrap.github.io)
+* [reactstrap](https://reactstrap.github.io)
 
 ## Lekce
 
